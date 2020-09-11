@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<HBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="MyMusic.controller.ArtistController" alignment="CENTER">
+    <VBox spacing="15">
+        <HBox styleClass="tabBar" alignment="CENTER_LEFT">
+            <padding><Insets top="10"></Insets></padding>
+            <Button text="Back" onAction="#goBack"></Button>
+        </HBox>
+
+        <HBox spacing="25">
+            <ImageView fx:id="artistImageView" fitWidth="200" fitHeight="200">
+                <image>
+                    <Image url="@musical-note.jpg" />
+                </image>
+            </ImageView>
+            <VBox fx:id="aritstInfoBox" spacing="10">
+                <Label text="Name" fx:id="artistNameLabel" styleClass="label-l"></Label>
+                <TextField fx:id="artistNameTextField" visible="false" managed="false" styleClass="label-l"></TextField>
+                <TextField fx:id="imagePathTextField" visible="false" managed="false" styleClass="label-s"></TextField>
+                <HBox spacing="3" styleClass="label-s">
+                    <Label text="Yours"></Label>
+                    <CheckBox fx:id="yoursCheckBox" onAction="#markAsYours"></CheckBox>
+                </HBox>
+                <Button text="Edit" fx:id="editButton" visible="false" managed="false" onAction="#toggleEditMode"></Button>
+                <Button text="Save" fx:id="saveButton" visible="false" managed="false" onAction="#save"></Button>
+
+            </VBox>
+        </HBox>
+
+        <HBox fx:id="artistAlbumsBox"></HBox>
+
+        <HBox fx:id="artistTracksBox"></HBox>
+
+    </VBox>
+</HBox>

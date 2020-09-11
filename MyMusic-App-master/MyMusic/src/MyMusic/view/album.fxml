@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<HBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="MyMusic.controller.AlbumController" alignment="CENTER">
+    <VBox spacing="15">
+        <HBox styleClass="tabBar" alignment="CENTER_LEFT">
+            <padding><Insets top="10"></Insets></padding>
+            <Button text="Back" onAction="#goBack"></Button>
+        </HBox>
+
+        <Line startX="-800" endX="800"></Line>
+
+
+        <HBox spacing="25">
+            <ImageView fx:id="albumImageView" fitWidth="300" fitHeight="300">
+                <image>
+                    <Image url="@musical-note.jpg" />
+                </image>
+            </ImageView>
+            <VBox spacing="10">
+                <HBox spacing="20">
+                    <Label text="Name" fx:id="albumNameLabel" styleClass="label-l"></Label>
+                    <Button fx:id="playButton" text="Play" styleClass="label-s" onAction="#play"></Button>
+                </HBox>
+                <Label text="Artist" fx:id="albumArtistLabel" styleClass="label-m"></Label>
+                <Label text="" fx:id="albumYearLabel" styleClass="label-s"></Label>
+                <Label text="" fx:id="albumGenreLabel" styleClass="label-s"></Label>
+                <TextField fx:id="albumNameTextField" visible="false" managed="false" styleClass="label-l"></TextField>
+                <TextField fx:id="imagePathTextField" visible="false" managed="false" styleClass="label-s"></TextField>
+                <TextField fx:id="yearTextField" visible="false" managed="false" styleClass="label-s"></TextField>
+                <TextField fx:id="genreTextField" visible="false" managed="false" styleClass="label-s"></TextField>
+                <HBox spacing="3" styleClass="label-s">
+                    <Label text="Yours"></Label>
+                    <CheckBox fx:id="yoursCheckBox" onAction="#markAsYours"></CheckBox>
+                </HBox>
+                <Button text="Edit" fx:id="editButton" visible="false" managed="false" onAction="#toggleEditMode"></Button>
+                <Button text="Save" fx:id="saveButton" visible="false" managed="false" onAction="#save"></Button>
+            </VBox>
+        </HBox>
+
+        <HBox fx:id="albumTracksContent">
+            <TableView minWidth="1600">
+                <columns>
+                    <TableColumn text="Play" prefWidth="200"></TableColumn>
+                    <TableColumn text="Name" prefWidth="200"></TableColumn>
+                    <TableColumn text="Time" prefWidth="200"></TableColumn>
+                    <TableColumn text="Artist" prefWidth="200"></TableColumn>
+                    <TableColumn text="Album" prefWidth="200"></TableColumn>
+                    <TableColumn text="Genre" prefWidth="200"></TableColumn>
+                    <TableColumn text="Plays" prefWidth="200"></TableColumn>
+                    <TableColumn text="Yours" prefWidth="200"></TableColumn>
+                </columns>
+            </TableView>
+        </HBox>
+
+    </VBox>
+</HBox>

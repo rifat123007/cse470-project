@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.shape.Line?>
+
+<?import javafx.scene.media.MediaView?>
+<HBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="MyMusic.controller.Controller" alignment="CENTER">
+    <VBox spacing="15">
+        <BorderPane styleClass="tabBar">
+            <padding><Insets top="10"></Insets></padding>
+            <left>
+                <Label fx:id="nameLabel" text="Name"/>
+            </left>
+            <center>
+                <HBox alignment="CENTER">
+                    <Button text="Your Music"/>
+                    <Button text="Find Music" onAction="#goToSearchPage"/>
+                </HBox>
+            </center>
+            <right>
+                <Button text="Logout" onAction="#logout"/>
+            </right>
+        </BorderPane>
+
+
+        <Line startX="-800" endX="800"></Line>
+
+        <MediaView>
+            <mediaPlayer>
+
+            </mediaPlayer>
+        </MediaView>
+        <HBox spacing="25" prefWidth="175">
+            <VBox>
+                <Button text="Tracks" styleClass="yourMusic-btn" prefWidth="175" minHeight="75" onAction="#displayTracks"></Button>
+                <Button text="Albums" styleClass="yourMusic-btn" prefWidth="175" minHeight="75" onAction="#displayAlbums"></Button>
+                <Button text="Artists" styleClass="yourMusic-btn" prefWidth="175" minHeight="75" onAction="#displayArtists"></Button>
+                <Button text="Playlists" styleClass="yourMusic-btn" prefWidth="175" minHeight="75" onAction="#displayPlaylists"></Button>
+                <Button text="Admin" fx:id="adminButton" styleClass="yourMusic-btn" prefWidth="175" minHeight="75" visible="false" onAction="#adminBtnAction"></Button>
+            </VBox>
+
+            <ScrollPane prefWidth="1400" prefHeight="850">
+                <VBox fx:id="yourMusicContent"></VBox>
+            </ScrollPane>
+        </HBox>
+    </VBox>
+</HBox>

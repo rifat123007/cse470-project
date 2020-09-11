@@ -1,0 +1,38 @@
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<HBox fx:controller="MyMusic.controller.SignUpController" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" alignment="CENTER">
+    <VBox alignment="CENTER" spacing="15">
+        <Label text="Sign Up" styleClass="login-title"/>
+        <VBox id="login-box" spacing="25" minWidth="500" minHeight="500" maxWidth="500" maxHeight="500" alignment="TOP_CENTER">
+            <VBox spacing="5">
+                <padding><Insets left="25" right="25" top="50"></Insets></padding>
+                <Label text="Name" styleClass="login-label"/>
+                <TextField fx:id="nameField" styleClass="login-field" minHeight="40"/>
+            </VBox>
+            <VBox spacing="5">
+                <padding><Insets left="25" right="25"></Insets></padding>
+                <Label text="Username" styleClass="login-label"/>
+                <TextField fx:id="usernameField" styleClass="login-field" minHeight="40"/>
+            </VBox>
+            <VBox spacing="5">
+                <padding><Insets left="25" right="25"></Insets></padding>
+                <Label text="Password" styleClass="login-label"/>
+                <PasswordField fx:id="passwordField" styleClass="login-field" minHeight="40"/>
+            </VBox>
+
+            <Button text="Sign Up" styleClass="login-btn" alignment="CENTER" minWidth="100" minHeight="40" onAction="#signup"/>
+
+            <Button text="Back" styleClass="login-btn" alignment="CENTER" minWidth="75" minHeight="30" onAction="#goToLoginPage"/>
+
+            <Label fx:id="errorLabel" text="" styleClass="login-error" wrapText="true">
+                <padding><Insets left="25" right="25"></Insets></padding>
+            </Label>
+        </VBox>
+    </VBox>
+</HBox>

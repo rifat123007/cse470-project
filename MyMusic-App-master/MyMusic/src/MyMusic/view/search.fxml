@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.shape.Line?>
+
+<HBox fx:controller="MyMusic.controller.SearchController" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" alignment="CENTER">
+    <VBox spacing="15">
+        <BorderPane styleClass="tabBar">
+            <padding><Insets top="10"></Insets></padding>
+            <left>
+                <Label fx:id="nameLabel" text="Name"/>
+            </left>
+            <center>
+                <HBox alignment="CENTER">
+                    <Button text="Your Music" onAction="#goToHomePage"/>
+                    <Button text="Find Music"/>
+                </HBox>
+            </center>
+            <right>
+                <Button text="Logout" onAction="#logout" />
+            </right>
+        </BorderPane>
+
+        <Line startX="-800" endX="800"></Line>
+
+        <HBox spacing="10">
+            <VBox minWidth="190" minHeight="500" spacing="10">
+                <padding><Insets left="10"></Insets></padding>
+                <Label text="Filter Search" styleClass="label-s"></Label>
+                <Label text="Results" styleClass="label-xs"></Label>
+                <VBox fx:id="resultsFilterBox" spacing="10">
+                    <padding><Insets left="20"></Insets></padding>
+                    <CheckBox text="Tracks" fx:id="trackCheckBox" selected="true"></CheckBox>
+                    <CheckBox text="Albums" fx:id="albumCheckBox" selected="true"></CheckBox>
+                    <CheckBox text="Artists" fx:id="artistCheckBox" selected="true"></CheckBox>
+                </VBox>
+                <Label text="Search on" styleClass="label-xs"></Label>
+                <VBox fx:id="searchOnBox" spacing="10">
+                    <padding><Insets left="20"></Insets></padding>
+                    <CheckBox text="Track Name" fx:id="trackNameCheckBox" selected="true"></CheckBox>
+                    <CheckBox text="Album Name" fx:id="albumNameCheckBox" selected="true"></CheckBox>
+                    <CheckBox text="Artist Name" fx:id="artistNameCheckBox" selected="true"></CheckBox>
+                </VBox>
+                <Label text="Genre" styleClass="label-xs"></Label>
+                <VBox fx:id="genreBox" spacing="10">
+                    <padding><Insets left="20"></Insets></padding>
+                    <CheckBox text="All" fx:id="allGenresCheckBox" selected="true" onAction="#toggleGenreCheckBoxes"></CheckBox>
+                    <CheckBox text="Alternative" fx:id="alternativeCheckBox" selected="false" onAction="#toggleAllGenresCheckBox"></CheckBox>
+                    <CheckBox text="Blues" fx:id="bluesCheckBox" selected="false" onAction="#toggleAllGenresCheckBox"></CheckBox>
+                    <CheckBox text="Classical" fx:id="classicalCheckBox" selected="false" onAction="#toggleAllGenresCheckBox"></CheckBox>
+                    <CheckBox text="Comedy" fx:id="comedyCheckBox" selected="false" onAction="#toggleAllGenresCheckBox"></CheckBox>
+                    <CheckBox text="Country" fx:id="countryCheckBox" selected="false" onAction="#toggleAllGenresCheckBox"></CheckBox>
+                    <CheckBox text="Dance" fx:id="danceCheckBox" selected="false" onAction="#toggleAllGenresCheckBox"></CheckBox>
+                    <CheckBox text="Electronic" fx:id="electronicCheckBox" selected="false" onAction="#toggleAllGenresCheckBox"></CheckBox>
+                    <CheckBox text="Metal" fx:id="metalCheckBox" selected="false" onAction="#toggleAllGenresCheckBox"></CheckBox>
+                    <CheckBox text="Pop" fx:id="popCheckBox" selected="false" onAction="#toggleAllGenresCheckBox"></CheckBox>
+                    <CheckBox text="Rap" fx:id="rapCheckBox" selected="false" onAction="#toggleAllGenresCheckBox"></CheckBox>
+                    <CheckBox text="Reggae" fx:id="reggaeCheckBox" selected="false" onAction="#toggleAllGenresCheckBox"></CheckBox>
+                    <CheckBox text="Rock" fx:id="rockCheckBox" selected="false" onAction="#toggleAllGenresCheckBox"></CheckBox>
+                    <CheckBox text="Soundtrack" fx:id="soundtrackCheckBox" selected="false" onAction="#toggleAllGenresCheckBox"></CheckBox>
+                </VBox>
+            </VBox>
+
+            <VBox spacing="25">
+                <HBox>
+                    <TextField fx:id="searchField" prefWidth="1300" minHeight="50" onAction="#search"></TextField>
+                    <Button text="Search" prefWidth="100" minHeight="50" onAction="#search"></Button>
+                </HBox>
+                <ScrollPane prefHeight="775">
+                    <VBox fx:id="searchResultsBox" spacing="10">
+
+                    </VBox>
+                </ScrollPane>
+            </VBox>
+
+        </HBox>
+
+    </VBox>
+</HBox>

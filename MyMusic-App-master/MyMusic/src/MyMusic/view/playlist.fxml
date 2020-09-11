@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+
+<HBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="MyMusic.controller.PlaylistController" alignment="CENTER">
+    <VBox spacing="15">
+        <HBox styleClass="tabBar" alignment="CENTER_LEFT">
+            <padding><Insets top="10"></Insets></padding>
+            <Button text="Back" onAction="#goBack"></Button>
+        </HBox>
+
+        <Line startX="-800" endX="800"></Line>
+
+
+        <HBox spacing="25">
+            <ImageView fx:id="playlistImageView" fitWidth="300" fitHeight="300">
+                <image>
+                    <Image url="@musical-note.jpg" />
+                </image>
+            </ImageView>
+            <VBox spacing="10">
+                <TextField text="My Playlist" fx:id="playlistNameTextField" styleClass="label-l"></TextField>
+                <TextField text="MyMusic/fxml/musical-note.jpg" fx:id="playlistImagePathTextField" styleClass="label-s"></TextField>
+                <Button text="Save Playlist" prefWidth="150" prefHeight="50" styleClass="label-s" onAction="#savePlaylist"></Button>
+                <Button text="Delete Playlist" prefWidth="150" prefHeight="50" styleClass="label-s" onAction="#deletePlaylist"></Button>
+            </VBox>
+        </HBox>
+
+        <HBox fx:id="playlistTracksContent">
+        </HBox>
+
+    </VBox>
+</HBox>
